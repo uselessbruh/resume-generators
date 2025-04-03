@@ -6,7 +6,8 @@ import "./Login.css";
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
-    password: ""
+    password: "",
+    rememberMe: false
   });
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -15,10 +16,10 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: type === 'checkbox' ? checked : value
     });
     
     // Clear error when user types
@@ -56,7 +57,7 @@ const Login = () => {
     
     setIsLoading(true);
     try {
-      await login(formData.email, formData.password);
+      await login(formData.email, formData.password, formData.rememberMe);
       navigate("/dashboard");
     } catch (error) {
       setErrors({ form: error.message || "Login failed" });
@@ -112,7 +113,12 @@ const Login = () => {
           
           <div className="form-options">
             <label className="remember-me">
-              <input type="checkbox" /> Remember me
+              <input 
+                type="checkbox" 
+                name="rememberMe"
+                checked={formData.rememberMe}
+                onChange={handleChange}
+              /> Remember me
             </label>
             <Link to="/forgot-password" className="forgot-password">
               Forgot password?

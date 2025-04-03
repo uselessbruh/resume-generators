@@ -1,0 +1,577 @@
+/* FinalResume.css */
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Base styles */
+:root {
+    --primary-color: #4f46e5;
+    --primary-dark: #4338ca;
+    --primary-light: #818cf8;
+    --secondary-color: #f3f4f6;
+    --accent-color: #8b5cf6;
+    --text-color: #1f2937;
+    --text-light: #6b7280;
+    --text-lighter: #9ca3af;
+    --success-color: #10b981;
+    --error-color: #ef4444;
+    --warning-color: #f59e0b;
+    --white: #ffffff;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --border-color: #e5e7eb;
+    --radius: 8px;
+
+    /* Template specific colors */
+    --modern-accent: #4f46e5;
+    --professional-accent: #334155;
+    --creative-accent: #8b5cf6;
+    --creative-gradient: linear-gradient(135deg, #c026d3, #8b5cf6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    background-color: #f9fafb;
+    line-height: 1.5;
+}
+
+/* Loading state */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 1.25rem;
+    color: var(--text-light);
+}
+
+/* Final Resume Page Layout */
+.final-resume-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.resume-actions {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resume-actions h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.action-buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    color: var(--white);
+}
+
+.action-buttons button svg {
+    margin-right: 0.5rem;
+}
+
+.edit-button {
+    background-color: var(--primary-color);
+}
+
+.edit-button:hover {
+    background-color: var(--primary-dark);
+}
+
+.download-button {
+    background-color: var(--success-color);
+}
+
+.download-button:hover {
+    background-color: #0ca975;
+}
+
+/* Resume Preview Container */
+.resume-preview {
+    background-color: var(--white);
+    box-shadow: var(--shadow-md);
+    margin: 0 auto;
+    width: 100%;
+    max-width: 900px;
+    min-height: 1200px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Common Resume Elements */
+.resume-header {
+    margin-bottom: 2rem;
+}
+
+.resume-section {
+    margin-bottom: 2rem;
+}
+
+.resume-section h2 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.experience-item,
+.education-item {
+    margin-bottom: 1.5rem;
+}
+
+.date {
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+.company,
+.school {
+    font-weight: 500;
+}
+
+/* Modern Template */
+.modern-template {
+    font-family: 'Inter', sans-serif;
+    padding: 3rem;
+    height: 100%;
+}
+
+.modern-template .resume-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.modern-template .resume-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--modern-accent);
+}
+
+.modern-template .job-title {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.modern-template .contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.875rem;
+}
+
+.modern-template .resume-section h2 {
+    font-size: 1.5rem;
+    color: var(--modern-accent);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.modern-template .experience-header {
+    margin-bottom: 0.75rem;
+}
+
+.modern-template .experience-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.modern-template .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.modern-template .skill-tag {
+    background-color: var(--modern-accent);
+    color: var(--white);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+}
+
+/* Professional Template */
+.professional-template {
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+}
+
+.professional-template .resume-header {
+    background-color: var(--professional-accent);
+    color: var(--white);
+    padding: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.professional-template .name-title {
+    margin-right: 2rem;
+}
+
+.professional-template .name-title h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.professional-template .job-title {
+    font-size: 1.125rem;
+    opacity: 0.9;
+}
+
+.professional-template .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.professional-template .contact-item {
+    display: flex;
+    font-size: 0.875rem;
+}
+
+.professional-template .contact-label {
+    font-weight: 600;
+    margin-right: 0.5rem;
+    min-width: 70px;
+}
+
+.professional-template .resume-body {
+    padding: 2.5rem;
+}
+
+.professional-template .resume-section {
+    margin-bottom: 2.5rem;
+}
+
+.professional-template .resume-section h2 {
+    color: var(--professional-accent);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    position: relative;
+}
+
+.professional-template .resume-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--professional-accent);
+}
+
+.professional-template .experience-item,
+.professional-template .education-item {
+    margin-bottom: 1.5rem;
+}
+
+.professional-template .experience-item h3,
+.professional-template .education-item h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.professional-template .company-date,
+.professional-template .school-date {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+}
+
+.professional-template .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.professional-template .skill-item {
+    background-color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Creative Template */
+.creative-template {
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    height: 100%;
+}
+
+.creative-template .sidebar {
+    width: 35%;
+    background: var(--creative-gradient);
+    color: var(--white);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.creative-template .main-content {
+    width: 65%;
+    padding: 2.5rem;
+    background-color: var(--white);
+}
+
+.creative-template .sidebar-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.creative-template .avatar-placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+}
+
+.creative-template .sidebar-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+}
+
+.creative-template .sidebar-header .job-title {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+.creative-template .sidebar-section {
+    margin-bottom: 2rem;
+}
+
+.creative-template .sidebar-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.creative-template .sidebar-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.creative-template .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.creative-template .contact-item .icon {
+    margin-right: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.creative-template .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.creative-template .skill-bubble {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+
+.creative-template .content-section {
+    margin-bottom: 3rem;
+}
+
+.creative-template .content-section h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--creative-accent);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.creative-template .timeline-item {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.creative-template .timeline-marker {
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--creative-accent);
+}
+
+.creative-template .timeline-item:not(:last-child) .timeline-marker::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    width: 2px;
+    height: calc(100% + 1.5rem);
+    background-color: var(--border-color);
+}
+
+.creative-template .timeline-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.creative-template .timeline-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--text-light);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Print Styles */
+@media print {
+    .resume-actions {
+        display: none;
+    }
+
+    .resume-preview {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    .final-resume-page {
+        padding: 0;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .professional-template .resume-header {
+        flex-direction: column;
+    }
+
+    .professional-template .name-title {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .action-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .action-buttons button {
+        width: 100%;
+    }
+
+    .creative-template {
+        flex-direction: column;
+    }
+
+    .creative-template .sidebar,
+    .creative-template .main-content {
+        width: 100%;
+    }
+
+    .modern-template {
+        padding: 2rem;
+    }
+
+    .professional-template .resume-header,
+    .professional-template .resume-body {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .resume-actions h1 {
+        font-size: 1.5rem;
+    }
+
+    .modern-template .resume-header h1 {
+        font-size: 2rem;
+    }
+
+    .modern-template .contact-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .professional-template .company-date,
+    .professional-template .school-date {
+        flex-direction: column;
+    }
+
+    .professional-template .skills-container {
+        grid-template-columns: 1fr;
+    }
+}

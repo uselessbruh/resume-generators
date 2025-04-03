@@ -64,6 +64,7 @@
 
 .input-container {
   position: relative;
+  padding-left: 40px;
   display: flex;
   align-items: center;
 }
@@ -79,6 +80,7 @@
 .form-group input {
   width: 100%;
   padding: 14px 14px 14px 40px;
+  
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   font-size: 15px;

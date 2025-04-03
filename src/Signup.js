@@ -64,7 +64,12 @@ const Signup = () => {
     
     setIsLoading(true);
     try {
-      await signup(formData.email, formData.password);
+      const userCredential = await signup(formData.email, formData.password, true);
+      // Store auth state immediately after successful signup
+      localStorage.setItem('authState', JSON.stringify({
+        user: userCredential.user,
+        rememberMe: true
+      }));
       navigate("/dashboard");
     } catch (error) {
       setErrors({ form: error.message || "Signup failed" });
